@@ -1,0 +1,73 @@
+{
+  "repo": "meridian-parse-csv-mark",
+  "language": "Ruby",
+  "category": "Parsers",
+  "goal": "Implement a Ruby parsers project for csv policy evaluation, using deny and allow fixtures and explainable decision traces.",
+  "review_model": {
+    "terms": [
+      "token drift",
+      "grammar width",
+      "label quality",
+      "error locality"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "token drift",
+      "signal": 42,
+      "slack": 37,
+      "drag": 11,
+      "confidence": 65,
+      "score": 153,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "grammar width",
+      "signal": 68,
+      "slack": 45,
+      "drag": 23,
+      "confidence": 75,
+      "score": 187,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "label quality",
+      "signal": 59,
+      "slack": 41,
+      "drag": 15,
+      "confidence": 77,
+      "score": 191,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "error locality",
+      "signal": 71,
+      "slack": 41,
+      "drag": 9,
+      "confidence": 53,
+      "score": 209,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "token drift",
+      "signal": 85,
+      "slack": 21,
+      "drag": 11,
+      "confidence": 47,
+      "score": 205,
+      "lane": "ship"
+    }
+  ]
+}
