@@ -1,0 +1,28 @@
+{
+  "repo": "meridian-parse-csv-mark",
+  "language": "Ruby",
+  "category": "Parsers",
+  "goal": "Implement a Ruby parsers project for csv policy evaluation, using deny and allow fixtures and explainable decision traces.",
+  "weights": {
+    "signal": 3,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 4
+  },
+  "thresholds": {
+    "ship": 191,
+    "watch": 122
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}

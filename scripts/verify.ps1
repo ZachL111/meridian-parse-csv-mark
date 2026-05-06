@@ -63,3 +63,9 @@ ruby -Ilib tests/test_policy.rb
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-meridian-parse-csv-detail.ps1
 
 ruby -Ilib tests/test_domain_review.rb
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-meridian-parse-csv-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-meridian-parse-csv-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
